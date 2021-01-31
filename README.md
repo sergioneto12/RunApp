@@ -4,7 +4,7 @@
 
 # Um projeto de continuidade a Calculadora de Corrida já criada em React!!
 
-O app tem um design simplificado, já que, embora o React Native (feito em quase totalmente Native básico), muitas vezes se torna necessário criar uma ferramenta aplicada ao uso rápido e eficiente.
+O app tem um design simplificado (feito em quase totalmente Native básico), já que muitas vezes se torna necessário criar uma ferramenta aplicada ao uso rápido e eficiente.
 
 Como mencionado, foi criado em React Native, devido ao fato de ser um estudo inicial pessoal na ferramenta. Conforme fui descobrindo as particularidades que diferenciam React e React Native, algumas ferramentas precisaram ser utilizadas para melhorar a usabilidade.
 
