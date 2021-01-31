@@ -2,21 +2,32 @@
   "expo": {
     "name": "Calculadora de Corrida",
     "slug": "RunnerApp",
-    "ios": {
-      "bundleIdentifier": "com.sergioneto.runnercalculator",
-      "buildNumber": "1.0.0"
-    },
-    "android": {
-      "package": "com.sergioneto.runnercalculator",
-      "versionCode": 1,
-   
-    "icon": "./assets/bundle/ionic/resources/android/icon/drawable-mdpi-icon.png",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.jpg",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon2.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.sergioght14.RunnerApp"
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
     }
-    
-
   }
-}}
+}

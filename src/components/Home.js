@@ -1,8 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, ImageBackground} from 'react-native';
 
-
-
 export default function Home ({navigation}) {
     return (
         <View style={styles.main}>
@@ -37,10 +35,9 @@ export default function Home ({navigation}) {
 const styles = StyleSheet.create ({
     main: {
         flex: 1,
-        backgroundColor: '#F78D02',
+        backgroundColor: '#ffffff',
         alignContent: 'center',
         alignItems: 'center',
-        
     },
 
     top: {
@@ -48,13 +45,12 @@ const styles = StyleSheet.create ({
         borderRadius:10,
         borderWidth: 4,
         alignItems: 'center',
-        marginTop: '20%',
+        marginTop: '10%',
         marginHorizontal: '10%',
         paddingHorizontal: '1%',
         paddingVertical: '12%',
         justifyContent: 'center',
         backgroundColor: 'transparent',
-        
     },
 
     text1: {
@@ -81,7 +77,8 @@ const styles = StyleSheet.create ({
         color: '#0c1f38',
         fontSize: 25,
         fontWeight: 'bold',
-        marginTop: '15%',
+        marginTop: '20%',
+        marginBottom: '5%',
     },
 
     btext: {
@@ -90,7 +87,7 @@ const styles = StyleSheet.create ({
         color: '#0c1f38',
         fontSize: 25,
         fontWeight: 'bold',
-        marginTop: '8%',
+        marginTop: '5%',
         borderColor: '#0c1f38',
         borderBottomWidth: 4,
 

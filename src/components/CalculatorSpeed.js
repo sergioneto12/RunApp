@@ -11,9 +11,25 @@ export default function CalculatorSpeed() {
     const Calculation = () =>  {
         console.log(distance, hours, minutes);
 
-        const dist = parseFloat(distance);
-        const hour = parseFloat(hours) * 60;
-        const minute = parseFloat(minutes);
+        let dist = parseFloat(distance);
+
+        if (isNaN(dist)) {
+            let dist = 0;
+        };
+
+        let hour = parseFloat(hours) * 60;
+
+        if (isNaN(hour)) {
+            hour = 0;
+        };
+
+        let minute = parseFloat(minutes);
+
+        if (isNaN(minute)) {
+            minute = 0;
+        };
+
+        console.log(dist, hour, minute);
 
         let time = hour + minute;
 

@@ -2,19 +2,41 @@ import React, {useState} from 'react';
 import {Text, TextInput, View, StyleSheet,Button} from 'react-native';
 
 export default function CalculatorSpeed() {
-    const [distance, setDistance] = useState(0);
-    const [hours, setHours] = useState(0);
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] = useState(0);
-    const [resultado, setResultado] = useState(0);
+    let [distance, setDistance] = useState('');
+    let [hours, setHours] = useState('');
+    let [minutes, setMinutes] = useState('');
+    let [seconds, setSeconds] = useState('');
+    let [resultado, setResultado] = useState('');
 
     const Calculation = () =>  {
-        console.log(distance, hours, minutes);
 
-        const dist = parseFloat(distance);
-        const hour = parseFloat(hours) * 60;
-        const minute = parseFloat(minutes);
-        const second = parseFloat(seconds) / 60;
+        console.log(distance, hours, minutes, seconds);
+
+        let dist = parseFloat(distance);
+
+        if (isNaN(dist)) {
+            let dist = 0;
+        };
+
+        let hour = parseFloat(hours) * 60;
+
+        if (isNaN(hour)) {
+            hour = 0;
+        };
+
+        let minute = parseFloat(minutes);
+
+        if (isNaN(minute)) {
+            minute = 0;
+        };
+
+        let second = parseFloat(seconds);
+
+        if (isNaN(second)) {
+            second = 0;
+        };
+
+        console.log(dist, hour, minute, second);
 
         let time = hour + minute + second;
 
@@ -27,12 +49,12 @@ export default function CalculatorSpeed() {
 
         let dec = ((decimal*6)/10).toFixed(0);
 
-        const partInt = int.toString();
-        const partDec = dec.toString();
+        let partInt = int.toString();
+        let partDec = dec.toString();
 
         let result_value = partInt + 'min e ' + partDec + 'seg por km';
 
-        const final = setResultado(result_value);
+        let final = setResultado(result_value);   
     }
 
     return (
@@ -96,6 +118,7 @@ export default function CalculatorSpeed() {
             <Button
                 color= '#0c1f38'
                 title='Calcular'
+                marginTop= {'10%'}
                 onPress={Calculation}
             >
             </Button>
@@ -119,10 +142,10 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: 'center',
         color: '#0c1f38',
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Roboto',
         fontWeight: 'bold',
-        marginHorizontal: 15,
+        marginHorizontal: 10,
     },
 
     h2: {
@@ -146,15 +169,6 @@ const styles = StyleSheet.create({
         width: 80,
         borderRadius:10,
         borderWidth:1,
-    },
-
-    button: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#0c1f38',
-        fontSize: 12,
-        fontWeight: 'bold',
-        height: 10,
     },
     
 })
