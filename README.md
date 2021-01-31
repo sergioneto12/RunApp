@@ -14,4 +14,4 @@ Assim, para a troca de views, os componentes foram separados, e linkados com o u
 
 # Depolyed with Expo Go
 
-Em breve, disponibilizarei o app para testes e uso na playstore, e possivelmente, app store.
+Em breve, disponibilizarei o app para testes e uso na play store, e possivelmente, app store.
