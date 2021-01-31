@@ -11,7 +11,7 @@ import Footer from './src/components/Footer';
 function SplashScreen({navigation}) {
     setTimeout(() => {
       navigation.replace('Home')
-    }, 30000);
+    }, 3000);
 
     return (
     <ImageBackground 
