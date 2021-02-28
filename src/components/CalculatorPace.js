@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {Text, TextInput, View, StyleSheet,Button} from 'react-native';
+import {Text, TextInput, View, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default function CalculatorSpeed() {
-    let [distance, setDistance] = useState('');
-    let [hours, setHours] = useState('');
-    let [minutes, setMinutes] = useState('');
-    let [seconds, setSeconds] = useState('');
-    let [resultado, setResultado] = useState('');
+    let [distance, setDistance] = useState(0);
+    let [hours, setHours] = useState(0);
+    let [minutes, setMinutes] = useState(0);
+    let [seconds, setSeconds] = useState(0);
+    let [resultado, setResultado] = useState(0);
 
     const Calculation = () =>  {
 
@@ -30,7 +30,7 @@ export default function CalculatorSpeed() {
             minute = 0;
         };
 
-        let second = parseFloat(seconds);
+        let second = parseFloat(seconds) / 60;
 
         if (isNaN(second)) {
             second = 0;
@@ -59,9 +59,9 @@ export default function CalculatorSpeed() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.h1}>Seu tempo por km</Text>
+            <Text style={styles.h1}>Seu Pace</Text>
 
-            <Text style={styles.h2}>Quanto você percorreu em km?</Text>
+            <Text style={styles.h2}>Distância (km)</Text>
 
             <TextInput
                 keyboardType={'numeric'}
@@ -73,9 +73,9 @@ export default function CalculatorSpeed() {
             >
             </TextInput>
 
-            <Text style={styles.h1}>Em quanto tempo?</Text>
+            <Text style={styles.h1}>Tempo</Text>
 
-            <Text style={styles.h2}>Qtd de horas</Text>
+            <Text style={styles.h2}>Horas</Text>
 
             <TextInput
                 keyboardType={'numeric'}
@@ -87,7 +87,7 @@ export default function CalculatorSpeed() {
             >
             </TextInput>
 
-            <Text style={styles.h2}>Qtd de minutos</Text>
+            <Text style={styles.h2}>Minutos</Text>
 
             <TextInput
                 keyboardType={'numeric'}
@@ -99,7 +99,7 @@ export default function CalculatorSpeed() {
             >
             </TextInput>
 
-            <Text style={styles.h2}>Qtd de segundos</Text>
+            <Text style={styles.h2}>Segundos</Text>
 
             <TextInput
                 keyboardType={'numeric'}
@@ -115,13 +115,13 @@ export default function CalculatorSpeed() {
 
             <Text style={styles.h1}>{resultado}</Text>
 
-            <Button
-                color= '#0c1f38'
-                title='Calcular'
-                marginTop= {'10%'}
+            <TouchableOpacity
+                
                 onPress={Calculation}
+                style={styles.button}
             >
-            </Button>
+                <Text style={styles.btext}>Calcular</Text>
+            </TouchableOpacity>
 
         </View>
     )
@@ -135,17 +135,18 @@ const styles = StyleSheet.create({
         height: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#a7e0d7',
+        backgroundColor: '#e65401',
     },
 
     h1: {
         alignContent: 'center',
         alignItems: 'center',
         color: '#0c1f38',
-        fontSize: 25,
+        fontSize: 30,
         fontFamily: 'Roboto',
         fontWeight: 'bold',
-        marginHorizontal: 10,
+        marginHorizontal: 20,
+        marginBottom: '2%',
     },
 
     h2: {
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
         color: '#0c1f38',
         fontSize: 20,
         fontWeight: 'bold',
-        marginTop: '4%',
+        marginTop: '1%',
         marginBottom: '2%',
     },
 
@@ -162,13 +163,31 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#e65401',
-        color: 'white',
-        marginBottom: '2%',
+        backgroundColor: '#fff',
+        color: 'black',
+        marginBottom: '5%',
         height: 40,
-        width: 80,
-        borderRadius:10,
-        borderWidth:1,
+        width: 100,
+        borderRadius: 10,
+        borderWidth: 1,
+    },
+
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#0c1f38',
+        borderRadius: 15,
+        height: 50,
+        width: 110,
+        
+    },
+
+    btext: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: 20,
+        fontWeight: 'bold',
     },
     
 })

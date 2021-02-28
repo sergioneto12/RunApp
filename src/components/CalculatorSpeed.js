@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Text, TextInput, View, StyleSheet, Button} from 'react-native';
-
+import {Text, TextInput, View, StyleSheet, Button, TouchableOpacity} from 'react-native';
 
 export default function CalculatorSpeed() {
     const [distance, setDistance] = useState(0);
@@ -46,24 +45,18 @@ export default function CalculatorSpeed() {
         <View style={styles.container}>
             <Text style={styles.h1}>Sua Velocidade</Text>
 
-            <Text style={styles.h2}>Quanto você percorreu em km?</Text>
+            <Text style={styles.h2}>Distância (km)</Text>
 
             <TextInput
                 keyboardType={'numeric'}
                 onChangeText={(value) => {setDistance(value)}}
                 style={styles.input}
-                textAlign={'center'}
-                fontWeight='bold'
-                fontSize={22}
-                borderRadius= {10}
-                borderWidth= {1}
-                
             >
             </TextInput>
 
-            <Text style={styles.h1}>Em quanto tempo?</Text>
+            <Text style={styles.h1}>Tempo</Text>
 
-            <Text style={styles.h2}>Qtd de horas</Text>
+            <Text style={styles.h2}>Horas</Text>
 
             <TextInput
                 keyboardType={'numeric'}
@@ -75,7 +68,7 @@ export default function CalculatorSpeed() {
             >
             </TextInput>
 
-            <Text style={styles.h2}>Qtd de minutos</Text>
+            <Text style={styles.h2}>Minutos</Text>
 
             <TextInput
                 keyboardType={'numeric'}
@@ -91,17 +84,19 @@ export default function CalculatorSpeed() {
 
             <Text style={styles.h1}>{resultado}</Text>
 
-            <Button
-                color= '#0c1f38'
-                title='Calcular'
+            <TouchableOpacity
+                
                 onPress={Calculation}
+                style={styles.button}
             >
-            </Button>
+                <Text style={styles.btext}>Calcular</Text>
+            </TouchableOpacity>
 
         </View>
     )
 
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -110,7 +105,7 @@ const styles = StyleSheet.create({
         height: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#a7e0d7',
+        backgroundColor: '#e65401',
     },
 
     h1: {
@@ -121,6 +116,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto',
         fontWeight: 'bold',
         marginHorizontal: 20,
+        marginBottom: '3%',
     },
 
     h2: {
@@ -129,7 +125,7 @@ const styles = StyleSheet.create({
         color: '#0c1f38',
         fontSize: 20,
         fontWeight: 'bold',
-        marginTop: '6%',
+        marginTop: '3%',
         marginBottom: '2%',
     },
 
@@ -137,22 +133,36 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#e65401',
-        color: 'white',
+        backgroundColor: '#fff',
+        color: 'black',
         marginBottom: '4%',
-        height: 40,
-        width: 80,
-        borderRadius:10,
-        borderWidth:1,
+        height: '8%',
+        width: '28%',
+        borderRadius: 10,
+        borderWidth: 1,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 22,
     },
 
     button: {
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#0c1f38',
-        fontSize: 12,
+        backgroundColor: '#0c1f38',
+        borderRadius: 15,
+        height: '10%',
+        width: '35%',
+        
+    },
+
+    btext: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: 25,
         fontWeight: 'bold',
-        height: 10,
+
     },
     
 })
+
